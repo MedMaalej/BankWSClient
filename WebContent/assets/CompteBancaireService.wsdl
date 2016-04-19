@@ -1,0 +1,224 @@
+<?xml version="1.0" ?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.iit.tn/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="CompteBancaireServiceService" targetNamespace="http://service.iit.tn/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.iit.tn/" elementFormDefault="unqualified" targetNamespace="http://service.iit.tn/" version="1.0">
+
+  <xs:element name="ajoutCompteBancaire" type="tns:ajoutCompteBancaire"></xs:element>
+
+  <xs:element name="ajoutCompteBancaireResponse" type="tns:ajoutCompteBancaireResponse"></xs:element>
+
+  <xs:element name="deleteCompteBancaire" type="tns:deleteCompteBancaire"></xs:element>
+
+  <xs:element name="deleteCompteBancaireResponse" type="tns:deleteCompteBancaireResponse"></xs:element>
+
+  <xs:element name="getById" type="tns:getById"></xs:element>
+
+  <xs:element name="getByIdResponse" type="tns:getByIdResponse"></xs:element>
+
+  <xs:element name="showCompteBancaire" type="tns:showCompteBancaire"></xs:element>
+
+  <xs:element name="showCompteBancaireResponse" type="tns:showCompteBancaireResponse"></xs:element>
+
+  <xs:element name="updateCompte" type="tns:updateCompte"></xs:element>
+
+  <xs:element name="updateCompteResponse" type="tns:updateCompteResponse"></xs:element>
+
+  <xs:complexType name="getById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:compteBancaireDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="compteBancaireDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="client" type="tns:clientDTO"></xs:element>
+      <xs:element name="rib" type="xs:long"></xs:element>
+      <xs:element name="solde" type="xs:float"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clientDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="adresse" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="cin" type="xs:string"></xs:element>
+      <xs:element name="id" type="xs:long"></xs:element>
+      <xs:element minOccurs="0" name="nom" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="prenom" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteCompteBancaire">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteCompteBancaireResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateCompte">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:compteBancaireDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateCompteResponse">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="showCompteBancaire">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="showCompteBancaireResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:compteBancaireDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ajoutCompteBancaire">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:compteBancaireDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ajoutCompteBancaireResponse">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="showCompteBancaireResponse">
+    <wsdl:part element="tns:showCompteBancaireResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ajoutCompteBancaire">
+    <wsdl:part element="tns:ajoutCompteBancaire" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="showCompteBancaire">
+    <wsdl:part element="tns:showCompteBancaire" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteCompteBancaireResponse">
+    <wsdl:part element="tns:deleteCompteBancaireResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ajoutCompteBancaireResponse">
+    <wsdl:part element="tns:ajoutCompteBancaireResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateCompte">
+    <wsdl:part element="tns:updateCompte" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteCompteBancaire">
+    <wsdl:part element="tns:deleteCompteBancaire" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateCompteResponse">
+    <wsdl:part element="tns:updateCompteResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getByIdResponse">
+    <wsdl:part element="tns:getByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getById">
+    <wsdl:part element="tns:getById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CompteBancaireService">
+    <wsdl:operation name="getById">
+      <wsdl:input message="tns:getById" name="getById">
+    </wsdl:input>
+      <wsdl:output message="tns:getByIdResponse" name="getByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCompteBancaire">
+      <wsdl:input message="tns:deleteCompteBancaire" name="deleteCompteBancaire">
+    </wsdl:input>
+      <wsdl:output message="tns:deleteCompteBancaireResponse" name="deleteCompteBancaireResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCompte">
+      <wsdl:input message="tns:updateCompte" name="updateCompte">
+    </wsdl:input>
+      <wsdl:output message="tns:updateCompteResponse" name="updateCompteResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showCompteBancaire">
+      <wsdl:input message="tns:showCompteBancaire" name="showCompteBancaire">
+    </wsdl:input>
+      <wsdl:output message="tns:showCompteBancaireResponse" name="showCompteBancaireResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ajoutCompteBancaire">
+      <wsdl:input message="tns:ajoutCompteBancaire" name="ajoutCompteBancaire">
+    </wsdl:input>
+      <wsdl:output message="tns:ajoutCompteBancaireResponse" name="ajoutCompteBancaireResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CompteBancaireServiceServiceSoapBinding" type="tns:CompteBancaireService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="deleteCompteBancaire">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="deleteCompteBancaire">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="deleteCompteBancaireResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getById">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="getById">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="getByIdResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCompte">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="updateCompte">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="updateCompteResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ajoutCompteBancaire">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="ajoutCompteBancaire">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="ajoutCompteBancaireResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="showCompteBancaire">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="showCompteBancaire">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="showCompteBancaireResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompteBancaireServiceService">
+    <wsdl:port binding="tns:CompteBancaireServiceServiceSoapBinding" name="CompteBancaireServicePort">
+      <soap:address location="http://localhost:8080/GestionBancaireEjb/CompteBancaireService"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

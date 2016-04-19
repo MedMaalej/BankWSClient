@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/tn/iit/service/Client.java=UTF-8
+encoding//src/tn/iit/service/ClientDTO.java=UTF-8
+encoding//src/tn/iit/service/ClientService.java=UTF-8
+encoding//src/tn/iit/service/ClientServiceService.java=UTF-8
+encoding//src/tn/iit/service/ClientServiceServiceLocator.java=UTF-8
+encoding//src/tn/iit/service/ClientServiceServiceSoapBindingStub.java=UTF-8
+encoding//src/tn/iit/service/CompteBancaireDTO.java=UTF-8
+encoding//src/tn/iit/service/CompteBancaireService.java=UTF-8
+encoding//src/tn/iit/service/CompteBancaireServiceService.java=UTF-8
+encoding//src/tn/iit/service/CompteBancaireServiceServiceLocator.java=UTF-8
+encoding//src/tn/iit/service/CompteBancaireServiceServiceSoapBindingStub.java=UTF-8

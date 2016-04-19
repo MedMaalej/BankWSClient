@@ -1,0 +1,310 @@
+<?xml version="1.0" ?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.iit.tn/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ClientServiceService" targetNamespace="http://service.iit.tn/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.iit.tn/" elementFormDefault="unqualified" targetNamespace="http://service.iit.tn/" version="1.0">
+
+  <xs:element name="ajoutClient" type="tns:ajoutClient"></xs:element>
+
+  <xs:element name="ajoutClientResponse" type="tns:ajoutClientResponse"></xs:element>
+
+  <xs:element name="allClient" type="tns:allClient"></xs:element>
+
+  <xs:element name="allClientResponse" type="tns:allClientResponse"></xs:element>
+
+  <xs:element name="getClientByCin" type="tns:getClientByCin"></xs:element>
+
+  <xs:element name="getClientByCinResponse" type="tns:getClientByCinResponse"></xs:element>
+
+  <xs:element name="getClientById" type="tns:getClientById"></xs:element>
+
+  <xs:element name="getClientByIdResponse" type="tns:getClientByIdResponse"></xs:element>
+
+  <xs:element name="getComptes" type="tns:getComptes"></xs:element>
+
+  <xs:element name="getComptesResponse" type="tns:getComptesResponse"></xs:element>
+
+  <xs:element name="modifierClient" type="tns:modifierClient"></xs:element>
+
+  <xs:element name="modifierClientResponse" type="tns:modifierClientResponse"></xs:element>
+
+  <xs:element name="supprimerClient" type="tns:supprimerClient"></xs:element>
+
+  <xs:element name="supprimerClientResponse" type="tns:supprimerClientResponse"></xs:element>
+
+  <xs:complexType name="getComptes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:client"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="client">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="adresse" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="cin" type="xs:string"></xs:element>
+      <xs:element name="id" type="xs:long"></xs:element>
+      <xs:element minOccurs="0" name="nom" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="prenom" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getComptesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:compteBancaireDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="compteBancaireDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="client" type="tns:clientDTO"></xs:element>
+      <xs:element name="rib" type="xs:long"></xs:element>
+      <xs:element name="solde" type="xs:float"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clientDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="adresse" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="cin" type="xs:string"></xs:element>
+      <xs:element name="id" type="xs:long"></xs:element>
+      <xs:element minOccurs="0" name="nom" type="xs:string"></xs:element>
+      <xs:element minOccurs="0" name="prenom" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getClientById">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getClientByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:clientDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ajoutClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:clientDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ajoutClientResponse">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="allClient">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="allClientResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:clientDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="modifierClient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:clientDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="modifierClientResponse">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="supprimerClient">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="supprimerClientResponse">
+    <xs:sequence></xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getClientByCin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getClientByCinResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:clientDTO"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getClientByIdResponse">
+    <wsdl:part element="tns:getClientByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="supprimerClientResponse">
+    <wsdl:part element="tns:supprimerClientResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="allClientResponse">
+    <wsdl:part element="tns:allClientResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ajoutClientResponse">
+    <wsdl:part element="tns:ajoutClientResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifierClientResponse">
+    <wsdl:part element="tns:modifierClientResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getComptesResponse">
+    <wsdl:part element="tns:getComptesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClientByCin">
+    <wsdl:part element="tns:getClientByCin" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ajoutClient">
+    <wsdl:part element="tns:ajoutClient" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClientById">
+    <wsdl:part element="tns:getClientById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="allClient">
+    <wsdl:part element="tns:allClient" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="supprimerClient">
+    <wsdl:part element="tns:supprimerClient" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClientByCinResponse">
+    <wsdl:part element="tns:getClientByCinResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getComptes">
+    <wsdl:part element="tns:getComptes" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modifierClient">
+    <wsdl:part element="tns:modifierClient" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ClientService">
+    <wsdl:operation name="getComptes">
+      <wsdl:input message="tns:getComptes" name="getComptes">
+    </wsdl:input>
+      <wsdl:output message="tns:getComptesResponse" name="getComptesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientById">
+      <wsdl:input message="tns:getClientById" name="getClientById">
+    </wsdl:input>
+      <wsdl:output message="tns:getClientByIdResponse" name="getClientByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ajoutClient">
+      <wsdl:input message="tns:ajoutClient" name="ajoutClient">
+    </wsdl:input>
+      <wsdl:output message="tns:ajoutClientResponse" name="ajoutClientResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allClient">
+      <wsdl:input message="tns:allClient" name="allClient">
+    </wsdl:input>
+      <wsdl:output message="tns:allClientResponse" name="allClientResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifierClient">
+      <wsdl:input message="tns:modifierClient" name="modifierClient">
+    </wsdl:input>
+      <wsdl:output message="tns:modifierClientResponse" name="modifierClientResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="supprimerClient">
+      <wsdl:input message="tns:supprimerClient" name="supprimerClient">
+    </wsdl:input>
+      <wsdl:output message="tns:supprimerClientResponse" name="supprimerClientResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientByCin">
+      <wsdl:input message="tns:getClientByCin" name="getClientByCin">
+    </wsdl:input>
+      <wsdl:output message="tns:getClientByCinResponse" name="getClientByCinResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientServiceServiceSoapBinding" type="tns:ClientService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="getComptes">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="getComptes">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="getComptesResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ajoutClient">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="ajoutClient">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="ajoutClientResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientById">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="getClientById">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="getClientByIdResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="allClient">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="allClient">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="allClientResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifierClient">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="modifierClient">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="modifierClientResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="supprimerClient">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="supprimerClient">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="supprimerClientResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientByCin">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="getClientByCin">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="getClientByCinResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientServiceService">
+    <wsdl:port binding="tns:ClientServiceServiceSoapBinding" name="ClientServicePort">
+      <soap:address location="http://localhost:8080/GestionBancaireEjb/ClientService"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
